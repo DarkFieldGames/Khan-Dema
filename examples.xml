@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+
+<factory damagetypes="3" >
+  <archetype name="fighter1" duration="1200">
+    <data size="70,60" health="40" pointvalue="40" damagenumber="3" >
+      <damage num="0" strength="0" />
+      <damage num="1" strength="2" />
+      <damage num="2" strength="5" />
+      <damage num="3" strength="0" />
+    </data>
+    <structure>
+      <light pos="0,20,30" colour="255,255,255" range="350" />
+      <mesh pos="0,0,0" file="ships/fighter1.3ds" texture="ships/fighter1.tga" scale="1.2" />
+      <mesh pos="0,20,15" file="ships/gun4.3ds" texture="ships/turret.tga" scale="1" />
+      <billboard pos="0,20,30" texture="sprites/lensflare.tga" size="50,50" />
+    </structure>
+    <path smoothness="0.75">
+      <point pos="0,0,0" />
+      <point pos="0,-300,0" />
+      <point pos="700,-500,0" />
+    </path>
+    <gun>
+      <shoot name="blueshot" pos="0,20,0" start="100" repeat="100" />
+    </gun>
+  </archetype>
+
+  <archetype name="blueshot" duration="1800">
+    <data size="10,40" health="1" pointvalue="0" damagenumber="1" >
+      <damage num="0" strength="0" />
+      <damage num="1" strength="0" />
+      <damage num="2" strength="0" />
+      <damage num="3" strength="50" />
+    </data>
+    <structure>
+      <billboard pos="0,0,0" texture="sprites/blueshot1.png" size="10,60" />
+      <light pos="0,0,0" colour="0,51,51" range="50" />
+    </structure>
+    <path smoothness="0.9">
+      <point pos="0,0,0" />
+      <point pos="0,700,0" />
+    </path>
+  </archetype>
+  
+  <archetype name="asteroid1" duration="500+10000r0">
+    <data size="60+r1,60+r1" health="20" pointvalue="10+r1" damagenumber="3" >
+      <damage num="0" strength="0" />
+      <damage num="1" strength="2" />
+      <damage num="2" strength="5" />
+      <damage num="3" strength="0" />
+    </data>
+    <structure>
+      <mesh pos="0,20,15" file="rocks/rock1.3ds" texture="rocks/rock.jpg" />
+    </structure>
+    <path smoothness="0.9">
+      <point pos="0,0,0" />
+      <point pos="0,-1400,0" />
+    </path>
+  </archetype>
+
+</factory>
